@@ -151,7 +151,7 @@ const editPassword = asyncHandler (async (req, res) => {
     const cipher = CrytpoJS.AES.encrypt(req.body.password, 'secret key 123').toString()
     const editUserPassword = await User.findByIdAndUpdate(
         req.params.id,
-        {cipher},
+        {password: cipher},
         {new: true}
     )
     res.status(200).json(editUserPassword)

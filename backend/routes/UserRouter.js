@@ -16,8 +16,10 @@ router.route('/').get(getUser).post(postUser)
 
 router.route('/login').post(loginUser)
 
-router.route('/:id').put(updateUser).delete(deltUser).get(getOneUser).put(editPassword)
+router.route('/:id').put(updateUser).delete(deltUser).get(getOneUser)
 
 router.route('/:ids').delete(deltMultiUser).get(getMultiUser)
+
+router.route('/edit-password/:id').put(editPassword)
 
 module.exports = router
